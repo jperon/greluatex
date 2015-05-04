@@ -5,6 +5,10 @@ Saisie directe d'extraits grégoriens dans un document (Lua)LaTeX.
 
 ## Installation
 
+### Dépendances
+
+Installez d'abord [gregorio et gregoriotex](https://github.com/gregorio-project/gregorio/), dont dépend cette extension.
+
 ### Pour un document isolé
 
 Copiez `greluatex.sty` et `greluatex.lua` dans le dossier contenant le document concerné.
