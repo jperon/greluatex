@@ -24,18 +24,12 @@ Dans le préambule de votre document, incluez le package `greluatex` :
 
     \usepackage{greluatex}
 
-Dès lors, il ne vous reste plus qu'à compiler le document comme d'habitude, avec `lualatex -shell-escape` :
+Dès lors, vous pouvez (ce qui n'est pas recommandé, sauf pour des fragments vraiment courts) saisir directement la musique au sein de votre document, grâce à la commande `compilegabc`. Par exemple :
+
+    \compilegabc{(c4) A(f)ve(c) Ma(d)rí(dh'!iv)a.(h.) (::)}
+
+Il ne vous reste plus qu'à compiler le document comme d'habitude, avec `lualatex -shell-escape` :
 
     lualatex -shell-escape DOCUMENT.TEX
-
-Vous pouvez (ce n'est pas recommandé, sauf pour des fragments vraiment courts) saisir directement la musique au sein de votre document, grâce à l'environnement `gre`. Par exemple :
-
-    \begin{gre}
-    (c4) A(h)ve.(d) (::)
-    \end{gre}
-
-L'argument `factor`, optionnel, influe sur la taille de la partition. Vous pouvez changer la taille pour l'ensemble des partitions en saisissant, avant l'inclusion des partitions concernées :
-
-    \setgrefactor{17}
 
 Voyez le document `test.tex` pour un exemple.
