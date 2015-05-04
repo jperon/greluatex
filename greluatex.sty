@@ -1,27 +1,7 @@
 \ProvidesPackage{greluatex}
-
-% Dépendances
 \RequirePackage[autocompile]{gregoriotex}
-\RequirePackage{keycommand}
-\RequirePackage{environ}
-\RequirePackage{luacode}
-% Script lua
+
+\def\luastring#1{"\luatexluaescapestring{#1}"}
+\def\luastringO#1{\luastring{\unexpanded\expandafter{#1}}}
 \directlua{dofile(kpse.find_file("greluatex.lua"))}
-
-% Taille par défaut des partitions
-\newcounter{factor}
-\newcounter{tmpgre}
-
-\NewEnviron{ecriregre}{%
-\directlua{Ecrire(\luastringO{\BODY}, \luastring{\grefile})}
-}
-
-\newkeyenvironment{gre}[factor=\grefactor][autres]{%
-\setcounter{factor}{\commandkey{factor}}
-\stepcounter{tmpgre}
-\def\grefile{tmp_gre/\alph{tmpgre}.gabc}
-\ecriregre%
-}{
-\endecriregre%
-{\setgrefactor{\arabic{factor}}\includescore{\grefile}}%
-}
+\long\def\compilegabc#1{\directlua{Compile(\luastringO{#1})}}
