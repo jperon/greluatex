@@ -21,27 +21,6 @@ function Ecrire(entree, fichier)
     o:close()
 end
 
-function BaseName(str)
-    tex.sprint(basename(str))
-end
-
-function DirName(str)
-    tex.sprint(dirname(str))
-end
-
-function basename(str)
-    local name = string.gsub(str, "(.*/)(.*)", "%2")
-    return name
-end
-
-function dirname(str)
-    if str:match(".-/.-") then
-    	local name = string.gsub(str, "(.*/)(.*)", "%1")
-    	return name
-    else
-    	return ''
-    end
-end
 
 function splitext(str, ext)
     if str:match(".-%..-") then
