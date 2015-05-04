@@ -1,7 +1,7 @@
 \ProvidesPackage{greluatex}
 \RequirePackage[autocompile]{gregoriotex}
 
-\def\luastring#1{"\luatexluaescapestring{#1}"}
-\def\luastringO#1{\luastring{\unexpanded\expandafter{#1}}}
 \directlua{dofile(kpse.find_file("greluatex.lua"))}
-\long\def\compilegabc#1{\directlua{Compile(\luastringO{#1})}}
+\long\def\compilegabc#1{%
+    \directlua{Compile("\luatexluaescapestring{\unexpanded\expandafter{#1}}")}%
+}
