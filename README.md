@@ -1,5 +1,7 @@
 # greluatex
 
+Obsolète : ces fonctionnalités sont maintenant intégrées directement dans Gregorio.
+Ce dépôt ne reste ici qu'à des fins de tests, en attendant de disparaître.
 Saisie directe d'extraits grégoriens dans un document (Lua)LaTeX.
 
 
@@ -26,7 +28,7 @@ Dans le préambule de votre document, incluez le package `greluatex` :
 
 Dès lors, vous pouvez (ce qui n'est pas recommandé, sauf pour des fragments vraiment courts) saisir directement la musique au sein de votre document, grâce à la commande `compilegabc`. Par exemple :
 
-    \compilegabc{(c4) A(f)ve(c) Ma(d)rí(dh'!iv)a.(h.) (::)}
+    \gabcsnippet{(c4) A(f)ve(c) Ma(d)rí(dh'!iv)a.(h.) (::)}
 
 Il ne vous reste plus qu'à compiler le document comme d'habitude, avec `lualatex -shell-escape` :
 

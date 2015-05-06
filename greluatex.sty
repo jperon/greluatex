@@ -2,6 +2,6 @@
 \RequirePackage[autocompile]{gregoriotex}
 
 \directlua{dofile(kpse.find_file("greluatex.lua"))}
-\long\def\compilegabc#1{%
-    \directlua{Compile("\luatexluaescapestring{\unexpanded\expandafter{#1}}")}%
+\long\def\gabcsnippet#1{%
+    \directlua{direct_gabc("\luatexluaescapestring{\unexpanded\expandafter{#1}}")}%
 }
